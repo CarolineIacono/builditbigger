@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">androidlibrary</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_settings">action settings</string>
+    <string name="instructions">click here</string>
+    <string name="button_text">button text</string>
+    <string name="missing_joke">this joke is missing</string>
+</resources>
