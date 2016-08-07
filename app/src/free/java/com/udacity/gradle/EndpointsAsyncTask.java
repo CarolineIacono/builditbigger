@@ -78,8 +78,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
         });
         AdRequest ar = new AdRequest
                 .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice(context.getString(R.string.device_id))
                 .build();
         mInterstitialAd.loadAd(ar);
     }
