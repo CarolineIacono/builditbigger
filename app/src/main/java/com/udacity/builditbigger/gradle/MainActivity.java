@@ -1,16 +1,12 @@
 package com.udacity.builditbigger.gradle;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.Joker;
-import com.example.android.androidlibrary.JokeActivity;
 import com.udacity.builditbigger.R;
 import com.udacity.gradle.EndpointsAsyncTask;
 
@@ -21,7 +17,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Caroline"));
+        new Joker();
+
+    }
+
+    public void launchJokeActivity(View view) {
+        new EndpointsAsyncTask(this).execute();
 
     }
 
@@ -54,13 +55,13 @@ public class MainActivity extends ActionBarActivity {
 //        Toast.makeText(this, myJoker.getJoke(), Toast.LENGTH_SHORT).show();
 //    }
 
-
-    public void launchJokeActivity(View view){
-        Intent intent = new Intent(this, JokeActivity.class);
-        Joker joker = new Joker();
-        String joke = joker.getJoke();
-        intent.putExtra(JokeActivity.JOKE_KEY, joke);
-        startActivity(intent);
-    }
+//
+//    public void launchJokeActivity(View view){
+//        Intent intent = new Intent(this, JokeActivity.class);
+//        Joker joker = new Joker();
+//        String joke = joker.getJoke();
+//        intent.putExtra(JokeActivity.JOKE_KEY, joke);
+//        startActivity(intent);
+//    }
 
 }
