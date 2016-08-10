@@ -15,10 +15,6 @@ public class JokeTelling {
         random = new Random();
     }
 
-    public String[] getJokes(){
-
-        return jokes;
-        }
 
     public String getRandomJoke() {
         return jokes[random.nextInt(jokes.length)];

@@ -18,7 +18,7 @@ public class NonEmptyStringTest extends AndroidTestCase {
 
             Log.v("non-empty string test", "running non-empty string test");
             String result = null;
-            EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
+            EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext());
             endpointsAsyncTask.execute();
             try {
                 result = endpointsAsyncTask.get();
