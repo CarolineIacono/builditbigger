@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.JokeTelling;
 import com.udacity.builditbigger.R;
 import com.udacity.gradle.EndpointsAsyncTask;
+import com.udacity.gradle.MainActivityFragment;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,14 +18,13 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportFragmentManager().beginTransaction().
+                add(R.id.fragment,new MainActivityFragment()).commit();
         new JokeTelling();
 
     }
 
-    public void launchJokeActivity(View view) {
-        new EndpointsAsyncTask(this).execute();
 
-    }
 
 
     @Override
@@ -49,19 +49,9 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void launchJokeActivity(View view) {
+        new EndpointsAsyncTask(this).execute();
 
-//    public void tellJoke(View view){
-//        Joker myJoker = new Joker();
-//        Toast.makeText(this, myJoker.getJoke(), Toast.LENGTH_SHORT).show();
-//    }
-
-//
-//    public void launchJokeActivity(View view){
-//        Intent intent = new Intent(this, JokeActivity.class);
-//        Joker joker = new Joker();
-//        String joke = joker.getJoke();
-//        intent.putExtra(JokeActivity.JOKE_KEY, joke);
-//        startActivity(intent);
-//    }
+    }
 
 }
